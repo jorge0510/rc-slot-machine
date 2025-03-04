@@ -1,0 +1,123 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+body {
+  background: linear-gradient(45deg, grey 0%, lightgray 100%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 327px;
+}
+
+img {
+  width: 79px;
+  height: 79px;
+}
+
+.reelContainer{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: linear-gradient(45deg, grey 0%, lightgray 100%);
+  border: 2px solid black;
+  height: 300px;
+}
+.actionContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reel{
+  width: 79px;
+  height: 240px;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.innerScroller {
+  height: 200vh;
+  background: url(../img/seven.webp)  center yellow;
+  background-size: 79px 700px;
+  border: 2px solid black;
+}
+
+.animated {
+  animation: downward .5s linear infinite;
+}
+
+.seven {
+  background-position: 0% 79px;
+}
+
+.cherry {
+  background-position: 0% calc(79px * 2);
+}
+
+.blueberry {
+  background-position: 0% calc(79px * 3);
+}
+
+.orange {
+  background-position: 0% calc(79px * 4);
+}
+
+.bell {
+  background-position: 0% calc(79px * 5);
+}
+
+.bar {
+  background-position: 0% calc(79px * 6);
+}
+
+.lemon {
+  background-position: 0% calc(79px * 7);
+}
+
+.watermelon {
+  background-position: 0% calc(79px * 8);
+}
+
+.banana {
+  background-position: 0% calc(79px * 9);
+}
+
+
+
+
+@keyframes downward {
+  to {
+    background-position: 0% 0%;
+  }
+  from {
+    background-position: 0% -100%;
+  }
+}
+
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
