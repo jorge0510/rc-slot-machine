@@ -1,5 +1,6 @@
 const reels = document.querySelectorAll(".innerScroller");
 const buttons = document.querySelectorAll("button");
+const h2 = document.querySelector("h2");
 
 const symbols = ['cherry', 'blueberry', 'orange', 'bell', 'bar', 'lemon', 'watermelon', 'banana', 'seven'];
 
@@ -20,8 +21,8 @@ const getResults = () => {
 const activateReels = () => {
     reels.forEach(reelElement => {
         reelElement.animate([
-            { transform: 'translateY(0%)' },
-            { transform: 'translateY(-100%)' }
+            { transform: 'translateY(-100%)' },
+            { transform: 'translateY(0%)' }
         ], {
             duration: 1000,
             iterations: 2
@@ -31,8 +32,8 @@ const activateReels = () => {
 
 buttons.forEach( buttonNode => {
     buttonNode.addEventListener('click', (e) => {
-        if (tokens < 0) { alert('you lost!'); return; }
         e.target.classList.contains('minButton') ? bet = 1 : bet = 20;
+        if (tokens - bet < 0) { h2.innerText = 'NOT ENOUGH TOKENS!'; return; }
         e.target.classList.contains('minButton') ? tokens -= 1 : tokens -= 20;
         document.querySelector('span').innerText = `YOU GOT ${tokens} TOKENS`;
         stopButtons();
@@ -47,7 +48,7 @@ buttons.forEach( buttonNode => {
             if (tokens > 0) {
                 didWin();
             } else {
-                alert('you lost!');
+                h2.innerText = 'YOU LOST!!';
             }
             activateButtons();
         }, 2000)

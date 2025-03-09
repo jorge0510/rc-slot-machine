@@ -41,8 +41,38 @@ img {
   padding: 30px;
   background: linear-gradient(45deg, grey 0%, lightgray 100%);
   border: 2px solid black;
+  border-radius: 10px;
   height: 300px;
+  margin-bottom: 15px;
 }
+
+span {
+  margin-top:7px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+button {
+  height: 40px;
+  margin: 0 20px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: gray;
+}
+
+.minButton {
+  background: greenyellow;
+}
+
+.maxButton {
+ background: lime;
+}
+
 .actionContainer {
   display: flex;
   justify-content: space-between;
@@ -54,13 +84,14 @@ img {
   flex-direction: column;
   overflow: hidden;
   margin: 0 20px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .innerScroller {
   height: 200vh;
   background: url(../img/seven.webp)  center yellow;
   background-size: 79px 700px;
-  border: 2px solid black;
 }
 
 .animated {
